@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://cryptotrader.org/" />
+<title>cryptotrader-auto</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">cryptotrader-auto</td></tr>
+</thead><tbody>
+<tr>
+	<td>label</td>
+	<td>start</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/backtests/dPxcod4JrrkmGY468</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>7.4 + 0.02*(Math.random()-0.5)</td>
+	<td>bull_mt</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>-2.76 + 0.003*(Math.random()-0.5)</td>
+	<td>bear_mt</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>19 + 0.1*(Math.random()-0.5)</td>
+	<td>m_s</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>65 + 0.1*(Math.random()-0.5)</td>
+	<td>m_l</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>(2.75 + 0.002*(Math.random()-0.5)) + &quot;, &quot; + (-8.0 + 0.08*(Math.random()-0.5)) + &quot;, &quot; + (4.75 + 0.002*(Math.random()-0.5))&nbsp;&nbsp;+ &quot;, &quot; + (6.725 + 0.001*(Math.random()-0.5)) </td>
+	<td>config_bear</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>(5.9 + 0.01*(Math.random()-0.5)) + &quot;, &quot; + (2.5 + 0.01*(Math.random()-0.5)) + &quot;, &quot; + (-8.15 + 0.002*(Math.random()-0.5))&nbsp;&nbsp;+ &quot;, &quot; + (3.53 + 0.002*(Math.random()-0.5)) </td>
+	<td>config_bull</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td> &quot;context.config_bull = new Config(${config_bull})\${KEY_ENTER}context.config_bear = new Config(${config_bear})\${KEY_ENTER}context.bull_market_threshold = ${bull_mt}\${KEY_ENTER}context.bear_market_threshold = ${bear_mt}\${KEY_ENTER}context.market_short = ${m_s}\${KEY_ENTER}context.market_long = ${m_l}&quot;</td>
+	<td>params</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=textarea</td>
+	<td>${KEY_META}a${KEY_META}${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=textarea</td>
+	<td># Ichimoku + Heikin-Ashi http://cryptotraderlab.org mod<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}# MtGox 2hr<br /><br />${KEY_META}${KEY_BACKSPACE}${KEY_META}class Ichimoku<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;constructor: (@tenkan_n, @kijun_n, @senkou_a_n, @senkou_b_n, @chikou_n) -&gt;<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;@tenkan = 0.0<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;@kijun = 0.0<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;@senkou_a = []<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;@senkou_b = []<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;@chikou = []<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;# get current ichimoku state<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;current: -&gt;<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;c =<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tenkan: @tenkan<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kijun: @kijun<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;senkou_a: @senkou_a[0]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;senkou_b: @senkou_b[0]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chikou: @chikou[@chikou.length - 1]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chikou_span: @chikou[@chikou.length - 1] - @chikou[0]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;return c<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;# update with latest instrument price data<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;put: (ins) -&gt;<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;@tenkan = this._hla(ins, @tenkan_n)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;@kijun = this._hla(ins, @kijun_n)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;@senkou_a.push((@tenkan + @kijun) / 2)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;this._splice(@senkou_a, @senkou_a_n)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;@senkou_b.push(this._hla(ins, @senkou_b_n * 2))<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;this._splice(@senkou_b, @senkou_b_n)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;@chikou.push(ins.close[ins.close.length - 1])<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;this._splice(@chikou, @chikou_n)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;# calc average of price extremes (high-low avg) over specified period<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;_hla: (ins, n) -&gt;<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;hh = _.max(ins.high[-n..])<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;ll = _.min(ins.low[-n..])<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;return (hh + ll) / 2<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;# restrict array length to specified max<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;_splice: (arr, l) -&gt;<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;while arr.length &gt; l<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr.splice(0, 1)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}class HeikinAshi<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;constructor: () -&gt;<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;@ins =<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;open: []<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;close: []<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;high: []<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;low: []<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;# update with latest instrument price data<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;put: (ins) -&gt;<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;if @ins.open.length == 0<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# initial candle<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@ins.open.push(ins.open[ins.open.length - 1])<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@ins.close.push(ins.close[ins.close.length - 1])<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@ins.high.push(ins.high[ins.high.length - 1])<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@ins.low.push(ins.low[ins.low.length - 1])<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;else<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# every other candle<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prev_open = ins.open[ins.open.length - 2]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prev_close = ins.close[ins.close.length - 2]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;curr_open = ins.open[ins.open.length - 1]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;curr_close = ins.close[ins.close.length - 1]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;curr_high = ins.high[ins.high.length - 1]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;curr_low = ins.low[ins.low.length - 1]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@ins.open.push((@ins.open[@ins.open.length - 1] + prev_close) / 2)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@ins.close.push((curr_open + curr_close + curr_high + curr_low) / 4)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;curr_openHA = @ins.open[@ins.open.length - 1]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;curr_closeHA = @ins.close[@ins.close.length - 1]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@ins.high.push(_.max([curr_high, curr_openHA, curr_closeHA]))<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@ins.low.push(_.min([curr_low, curr_openHA, curr_closeHA]))<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}class Functions<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;@diff: (x, y) -&gt;<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;((x - y) / ((x + y) / 2)) * 100<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;@ema: (data, period) -&gt;<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;results = talib.EMA<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inReal: data<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startIdx: 0<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endIdx: data.length - 1<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;optInTimePeriod: period<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;_.last(results)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;@populate: (target, ins) -&gt;<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;for i in [0...ins.close.length]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t =<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;open: ins.open[..i]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;close: ins.close[..i]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;high: ins.high[..i]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;low: ins.low[..i]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target.put(t)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;@can_buy: (ins, min_btc, fee_percent) -&gt;<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;portfolio.positions[ins.curr()].amount &gt;= ((ins.price * min_btc) * (1 + fee_percent / 100))<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;@can_sell: (ins, min_btc) -&gt;<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;portfolio.positions[ins.asset()].amount &gt;= min_btc<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}class Config<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;constructor: (@long_open, @long_close, @short_open, @short_close) -&gt;<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}init: (context) -&gt;<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;context.pair = 'btc_usd'<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;context.min_btc = 0.01<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;context.fee_percent = 0.6<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;context.ha = new HeikinAshi()<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;context.ichi_bull = new Ichimoku(26, 29, 29, 29, 11)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;context.ichi_bear = new Ichimoku(71, 26, 26, 26, 69)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;context.config_bull = new Config(${config_bull})<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;context.config_bear = new Config(${config_bear})<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;context.bull_market_threshold = ${bull_mt}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;context.bear_market_threshold = ${bear_mt}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;context.market_short = ${m_s}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;context.market_long = ${m_l}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;context.init = true<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}handle: (context, data) -&gt;<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;# get instrument<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;instrument = data[context.pair]<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;# handle instrument data<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;if context.init<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# initialise heikin-ashi<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Functions.populate(context.ha, instrument)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# initialise ichimoku (from heikin-ashi data)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Functions.populate(context.ichi_bull, context.ha.ins)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Functions.populate(context.ichi_bear, context.ha.ins)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.init = false<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;else<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# handle new instrument (via heikin-ashi)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.ha.put(instrument)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.ichi_bull.put(context.ha.ins)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.ichi_bear.put(context.ha.ins)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;# determine setup for current market condition (bull/bear)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;short = Functions.ema(context.ha.ins.close, context.market_short)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;long = Functions.ema(context.ha.ins.close, context.market_long)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;mkt_diff = Functions.diff(short, long)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;is_bull = mkt_diff &gt;= context.bull_market_threshold<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;is_bear = mkt_diff &lt;= context.bear_market_threshold<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;if is_bull or is_bear<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;if is_bull<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# bull market<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config = context.config_bull<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c = context.ichi_bull.current()<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;else<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# bear market<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config = context.config_bear<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c = context.ichi_bear.current()<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;# log/plot data<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;plot<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;short: short<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;long: long<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tenkan: c.tenkan<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kijun: c.kijun<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;senkou_a: c.senkou_a<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;senkou_b: c.senkou_b<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;# calc ichi indicators<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;tk_diff = Functions.diff(c.tenkan, c.kijun)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;tenkan_min = _.min([c.tenkan, c.kijun])<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;tenkan_max = _.max([c.tenkan, c.kijun])<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;kumo_min = _.min([c.senkou_a, c.senkou_b])<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;kumo_max = _.max([c.senkou_a, c.senkou_b])<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;# sell optios<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;if tk_diff &lt;= config.long_close <br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if Functions.can_sell(instrument, context.min_btc)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sell(instrument)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;if tk_diff &lt;= config.short_open and tenkan_max &lt;= kumo_min and c.chikou_span &lt;= 0<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if Functions.can_sell(instrument, context.min_btc)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sell(instrument)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# buy options<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if tk_diff &gt;= config.short_close<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if Functions.can_buy(instrument, context.min_btc, context.fee_percent)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buy(instrument)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;if tk_diff &gt;= config.long_open and c.chikou_span &gt;= 0<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if Functions.can_buy(instrument, context.min_btc, context.fee_percent)<br />${KEY_META}${KEY_BACKSPACE}${KEY_META}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buy(instrument) </td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.btn-backtest</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=.btn-run</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>10000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=.log div:last-child .message</td>
+	<td>backtest_result</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=textarea</td>
+	<td>${KEY_META}a${KEY_META}${KEY_BACKSPACE}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://socrates.io/#cryptotrader-backtest</td>
+	<td>take notes</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>css=.CodeMirror-measure</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=.CodeMirror textarea</td>
+	<td>${params}${KEY_ENTER}${backtest_result}${KEY_ENTER}${KEY_ENTER}${KEY_ENTER}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoLabel</td>
+	<td>start</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
