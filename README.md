@@ -1,4 +1,4 @@
-cryptotrader-backtest-browser-automation
+Backtest While You Sleep
 ===============================
 
 Browser automation tool for backtesting on Cryptotrader
